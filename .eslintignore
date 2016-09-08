@@ -1,0 +1,7 @@
+dist
+node_modules
+coverage
+webpack.*.js
+rollup.*.js
+gulpfile.js
+*server.js

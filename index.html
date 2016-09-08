@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LazyLoadImg Demo</title>
+    <style>
+    .container {
+        width: 1200px;
+        height: 900px;
+    }
+    li {
+        min-height: 100%;
+        min-width: 100%;
+    }
+    img {
+        height: 900px;
+        width: 1200px;
+        /*width: 100px;
+        height: 100px;*/
+    }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="container">
+        <ul>
+            <li><img src="" alt="" lazy-img="./static/img/1.jpg"></li>
+            <li><img src="" alt="" lazy-img="./static/img/2.jpg"></li>
+            <li><img src="" alt="" lazy-img="./static/img/3.jpg"></li>
+            <li><img src="" alt="" lazy-img="./static/img/4.jpg"></li>
+            <li><img src="" alt="" lazy-img="./static/img/5.jpg"></li>
+            <li><img src="" alt="" lazy-img="./static/img/6.jpg"></li>
+            <li><img src="" alt="" lazy-img="./static/img/7.jpg"></li>
+            <li><img src="" alt="" lazy-img="./static/img/8.jpg"></li>
+        </ul>
+    </div>
+
+    <script src="./dist/index.js"></script>
+    <script>
+        console.log(222)
+    // 默认加载body体全部lazyloadImg图片
+    // var lazyload = new LazyLoadImg();
+    // // 默认滚动条加载
+    // lazyload.init();
+
+    // // 手动加载
+    // lazyload.load();
+
+    // // 惰性加载container ID 元素内的图片
+    var lazyload = new LazyLoadImg("#container");
+        // 默认滚动条加载
+    lazyload.init();
+    </script>
+</body>
+</html>
