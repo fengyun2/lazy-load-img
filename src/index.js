@@ -2,7 +2,7 @@
  * @Author: baby
  * @Date:   2016-08-19 23:50:53
  * @Last Modified by: mikey.zhaopeng
- * @Last Modified time: 2016-09-08 16:21:10
+ * @Last Modified time: 2016-09-08 16:22:56
  */
 
 // 'use strict'
@@ -39,7 +39,7 @@ class LazyLoadImg {
             for(let i = 0, len = images.length; i < len; i++) {
                 const img = images[i];
                 console.log('load-img: ', img);
-                if(this.isOnVerticalViewPort(img) && this.isOnHorizontalViewPort(img)) {
+                if(this.isOnVerticalViewPort(img) && this.isOnHorizontalViewPort(img) && !img.isload) {
                     console.log('load: ${i}');
                     const url = img.getAttribute(_lazyFlag); // 获取图片资源的地址
                     img.setAttribute('src', url);
