@@ -2,7 +2,7 @@
  * @Author: baby
  * @Date:   2016-08-19 23:50:53
  * @Last Modified by: mikey.zhaopeng
- * @Last Modified time: 2016-09-08 16:22:56
+ * @Last Modified time: 2016-09-08 16:28:14
  */
 
 // 'use strict'
@@ -17,6 +17,13 @@ const _lazyFlag = 'lazy-img'; // The mark of lazy load
 const _viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 const _viewPortWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 
+/**
+ * 图片懒加载插件
+ *
+ * @author fengyun2 1518550424@qq.com
+ *
+ * @class LazyLoadImg
+ */
 class LazyLoadImg {
     constructor(elementId = '' ) {
         this.elementId = elementId;
