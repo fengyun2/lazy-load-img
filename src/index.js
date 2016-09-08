@@ -2,7 +2,7 @@
  * @Author: baby
  * @Date:   2016-08-19 23:50:53
  * @Last Modified by: mikey.zhaopeng
- * @Last Modified time: 2016-09-08 15:58:16
+ * @Last Modified time: 2016-09-08 16:21:10
  */
 
 // 'use strict'
@@ -12,6 +12,8 @@
 // console.log(cube(5)) // 125
 
 const _lazyFlag = 'lazy-img'; // The mark of lazy load
+
+// 获取视窗的高度和宽度
 const _viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 const _viewPortWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 
@@ -39,9 +41,9 @@ class LazyLoadImg {
                 console.log('load-img: ', img);
                 if(this.isOnVerticalViewPort(img) && this.isOnHorizontalViewPort(img)) {
                     console.log('load: ${i}');
-                    const url = img.getAttribute(_lazyFlag);
+                    const url = img.getAttribute(_lazyFlag); // 获取图片资源的地址
                     img.setAttribute('src', url);
-                    img.isload = true;
+                    img.isload = true;  // 加载过后的图片设置加载标记，以免重复加载
                 }
             }
         }
@@ -50,17 +52,24 @@ class LazyLoadImg {
     init() {
         const _self = this;
         _self.load();
+        // 监听滚动事件
         window.addEventListener('scroll', () => {
             _self.load();
         }, false);
     }
 
+    /**
+     * 是否处于垂直范围
+     */
     isOnVerticalViewPort(ele) {
         const rect = ele.getBoundingClientRect();
         console.log('isOnVerticalViewPort: ', rect);
         return rect.top > 0 && rect.top <= _viewPortHeight;
     }
 
+    /**
+     * 是否处于水平范围
+     */
     isOnHorizontalViewPort(ele) {
         const rect = ele.getBoundingClientRect();
         console.log('isOnHorizontalViewPort: ', rect);
